@@ -153,18 +153,18 @@
         <span class="plan-radio"></span>
         <div class="plan-top"><span class="plan-name">3 Monate auf einmal</span><span class="plan-badge">10 % sparen</span></div>
         <div class="plan-price"><span class="plan-num">2'421.90</span><span class="plan-per">CHF netto · einmalig</span></div>
-        <div class="plan-note">Die kompletten 3 Pilot-Monate im Voraus — 2'421.90 statt 2'691 CHF. Beste Wahl.</div>
+        <div class="plan-note">Die 3 Vertragsmonate auf einmal statt in Raten — 2'421.90 statt 2'691 CHF (10 % gespart). Beste Wahl.</div>
       </button>
       <button type="button" class="plan" data-plan="monat">
         <span class="plan-radio"></span>
-        <div class="plan-top"><span class="plan-name">Monatlich</span></div>
-        <div class="plan-price"><span class="plan-num">897</span><span class="plan-per">CHF netto / Monat</span></div>
-        <div class="plan-note">897 CHF pro Monat über den 3-Monats-Pilot (3× 897 = 2'691 CHF). Erste Rate sofort.</div>
+        <div class="plan-top"><span class="plan-name">In 3 Monatsraten</span></div>
+        <div class="plan-price"><span class="plan-num">897</span><span class="plan-per">CHF netto / Monat · 3×</span></div>
+        <div class="plan-note">Derselbe 3-Monats-Vertrag, bequem in 3 Monatsraten: 3× 897 = 2'691 CHF. Erste Rate sofort.</div>
       </button>
     </div>
 
     <div class="sum">
-      <div class="sum-row"><span class="muted">Zielkunden-Cockpit · 150 Kontakte/Monat · 3-Monats-Pilot</span></div>
+      <div class="sum-row"><span class="muted">Zielkunden-Cockpit · 150 Kontakte/Monat · fester 3-Monats-Vertrag</span></div>
       <div class="sum-row total"><span id="sumLabel">3 Monate auf einmal</span><span id="sumAmount">CHF 2'421.90</span></div>
       <div class="sum-tax" id="sumTax">≈ 450 Kontakte über den Pilot (150 pro Monat). Netto. B2B-Leistung aus der Schweiz nach Deutschland → <b>Reverse Charge</b> (Steuerschuldnerschaft des Leistungsempfängers), keine Schweizer MwSt.</div>
     </div>
@@ -177,7 +177,7 @@
     </div>
 
     <label class="consent"><input type="checkbox" id="agb" />
-      <span>Ich habe die <a id="lnkAgb">AGB &amp; Leistungsbeschreibung</a> und die <a id="lnkDs">Datenschutzerklärung</a> gelesen und stimme zu. Bei diesem B2B-Vertrag besteht kein Verbraucher-Widerrufsrecht; der Pilot ist nach 3 Monaten monatlich kündbar.</span>
+      <span>Ich habe die <a id="lnkAgb">AGB &amp; Leistungsbeschreibung</a> und die <a id="lnkDs">Datenschutzerklärung</a> gelesen und stimme zu. Es ist ein fester 3-Monats-Vertrag (B2B, kein Verbraucher-Widerrufsrecht); nicht passende Kontakte werden getauscht, eine vorzeitige Kündigung ist ausgeschlossen.</span>
     </label>
 
     <button class="cta" id="payBtn">Zahlungspflichtig bestellen →</button>
@@ -185,7 +185,7 @@
 
     <div class="trust">
       <span><span class="ok">✓</span> Schweizer AG</span>
-      <span><span class="ok">✓</span> Monatlich kündbar nach Pilot</span>
+      <span><span class="ok">✓</span> Nicht passende Kontakte tauschbar</span>
       <span><span class="ok">✓</span> Karte · TWINT · Rechnung</span>
       <span><span class="ok">✓</span> 256-Bit-SSL</span>
     </div>
@@ -222,7 +222,7 @@
 
 <script>
 const $=(s)=>document.querySelector(s);
-const PRICES={pilot3:{label:"3 Monate auf einmal",amount:"CHF 2'421.90",tax:"einmalig"},monat:{label:"Monatlich · 897 CHF",amount:"CHF 897.00 / Monat",tax:"erste Rate sofort, dann monatlich"}};
+const PRICES={pilot3:{label:"3 Monate auf einmal",amount:"CHF 2'421.90"},monat:{label:"In 3 Monatsraten",amount:"3× 897 = CHF 2'691"}};
 let plan="pilot3";
 function paint(){
   document.querySelectorAll(".plan").forEach(b=>b.classList.toggle("sel",b.dataset.plan===plan));
@@ -244,11 +244,12 @@ const LEGAL={
     <p style="margin-top:14px"><i>Hinweis: Die mit <span class="ph">[…]</span> markierten Angaben werden vor dem Versand an den Kunden durch die echten Firmendaten ersetzt.</i></p>`,
   agb:`<h3>AGB &amp; Leistungsbeschreibung (Kurzfassung)</h3>
     <h4>1. Vertragsgegenstand</h4><p>Estefano Elhawary AG (nachfolgend „Anbieter") stellt dem Kunden über die Pilotdauer <b>pro Monat 150 verifizierte Zielkontakte</b> bereit (je mit Firma, Branche, Fit-Score sowie Geschäftsführer inkl. LinkedIn-Profil), <b>jeden Monat aktualisiert</b> auf Basis der Rückmeldungen und Daten des Kunden. Enthalten ist der Online-Zugang zum „Zielkunden-Cockpit" mit Lookalike-Engine, Wettbewerbs-Übersicht sowie Aktivierungs- und Exportfunktionen. Der Kunde erhält ein nicht-ausschliessliches, nicht übertragbares Nutzungsrecht für die eigene Geschäftstätigkeit. Die Kontaktmenge (150/Monat) ist ein Richtwert nach bester Kuratierung; Qualität geht vor Menge.</p>
-    <h4>2. Laufzeit &amp; Kündigung</h4><p>3-Monats-Pilot. Danach läuft der Zugang monatlich weiter und ist jederzeit auf das Monatsende kündbar (formlos per E-Mail). Keine Mindestlaufzeit über den Pilot hinaus.</p>
-    <h4>3. Preise &amp; Zahlung</h4><p>Alle Preise in CHF, netto. Als B2B-Leistung eines Schweizer Anbieters an einen Unternehmer in Deutschland gilt das Reverse-Charge-Verfahren (Steuerschuldnerschaft des Leistungsempfängers); es wird keine Schweizer MwSt. ausgewiesen. Zahlung im Voraus über den Zahlungsdienstleister Payrexx (Schweiz). Freischaltung nach Zahlungseingang.</p>
-    <h4>4. Kein Verbraucher-Widerrufsrecht</h4><p>Der Vertrag wird mit einem Unternehmer (B2B) geschlossen; ein gesetzliches Verbraucher-Widerrufsrecht besteht nicht. Die Kündigungsregelung nach Ziffer 2 bleibt unberührt.</p>
-    <h4>5. Daten &amp; Datenschutz</h4><p>Es gilt die Datenschutzerklärung. Soweit der Anbieter personenbezogene Daten im Auftrag des Kunden verarbeitet, wird auf Wunsch ein Auftragsverarbeitungsvertrag (AVV nach Art. 28 DSGVO) geschlossen.</p>
-    <h4>6. Recht &amp; Gerichtsstand</h4><p>Es gilt Schweizer Recht. Gerichtsstand ist der Sitz des Anbieters, soweit gesetzlich zulässig.</p>
+    <h4>2. Laufzeit (fester 3-Monats-Vertrag)</h4><p>Der Vertrag wird verbindlich über eine feste Laufzeit von <b>3 Monaten</b> geschlossen und endet danach automatisch. Eine ordentliche Kündigung während der Laufzeit ist ausgeschlossen; das Recht zur ausserordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Eine Verlängerung über die 3 Monate hinaus erfolgt nur nach gesonderter Vereinbarung.</p>
+    <h4>3. Entgelt &amp; Zahlung</h4><p>Das Gesamtentgelt für die 3 Vertragsmonate beträgt <b>2'691 CHF netto</b> (3 × 897 CHF). Es ist nach Wahl des Kunden zahlbar entweder (a) <b>einmalig im Voraus</b> mit 10 % Rabatt = <b>2'421.90 CHF netto</b>, oder (b) in <b>3 monatlichen Raten</b> zu je 897 CHF netto. Bei Ratenzahlung ermächtigt der Kunde den Anbieter zum monatlichen Einzug über den Zahlungsdienstleister Payrexx (Schweiz); das Gesamtentgelt für die 3 Monate ist in jedem Fall geschuldet. Alle Preise netto in CHF. Als B2B-Leistung eines Schweizer Anbieters an einen Unternehmer in Deutschland gilt das Reverse-Charge-Verfahren (Steuerschuldnerschaft des Leistungsempfängers); es wird keine Schweizer MwSt. ausgewiesen. Freischaltung nach Eingang der ersten Zahlung.</p>
+    <h4>4. Austausch nicht passender Kontakte</h4><p>Der Kunde erwirbt mit dem Vertrag die monatliche Lieferung der Kontakte; diese ist verbindlich gekauft. Passt ein gelieferter Kontakt nachweislich nicht zum vereinbarten Zielprofil, wird er auf Meldung des Kunden gegen einen passenden Kontakt <b>getauscht</b> (Austausch innerhalb der jeweiligen Monatslieferung). Ein Anspruch auf Geldrückgabe oder vorzeitige Beendigung des Vertrags besteht dadurch nicht.</p>
+    <h4>5. Kein Verbraucher-Widerrufsrecht</h4><p>Der Vertrag wird mit einem Unternehmer (B2B) geschlossen; ein gesetzliches Verbraucher-Widerrufsrecht besteht nicht.</p>
+    <h4>6. Daten &amp; Datenschutz</h4><p>Es gilt die Datenschutzerklärung. Soweit der Anbieter personenbezogene Daten im Auftrag des Kunden verarbeitet, wird auf Wunsch ein Auftragsverarbeitungsvertrag (AVV nach Art. 28 DSGVO) geschlossen.</p>
+    <h4>7. Recht &amp; Gerichtsstand</h4><p>Es gilt Schweizer Recht. Gerichtsstand ist der Sitz des Anbieters, soweit gesetzlich zulässig.</p>
     <p style="margin-top:14px"><i>Kurzfassung für die Bestellung. Vor dem Live-Gang wird die finale Fassung anwaltlich abgenommen.</i></p>`,
   ds:`<h3>Datenschutzerklärung (Kurzfassung)</h3>
     <p><b>Verantwortliche Stelle:</b> Estefano Elhawary AG, <span class="ph">[Adresse]</span>, Schweiz, <span class="ph">[kontakt@estefano-elhawary.ch]</span>.</p>
