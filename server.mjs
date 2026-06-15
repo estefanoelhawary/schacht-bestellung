@@ -27,6 +27,8 @@ async function createPayrexxGateway({ amountRappen, currency, purpose, reference
   if (!instance || !process.env.PAYREXX_API_KEY) throw new Error("Payrexx nicht konfiguriert");
   const b = { amount: Math.round(amountRappen), currency: currency.toUpperCase(), purpose, successRedirectUrl: successUrl, failedRedirectUrl: cancelUrl, cancelRedirectUrl: cancelUrl, referenceId };
   if (subscription) { b.subscriptionState = 1; b.subscriptionInterval = subscription.interval; b.subscriptionPeriod = subscription.period; b.subscriptionCancellationInterval = subscription.cancel; }
+  // Globale Regel: KEINE TWINT, nur Abo-/recurring-fähige Zahlarten (Karte + Wallet).
+  ["mastercard", "visa", "american_express", "apple_pay", "google_pay"].forEach((m, i) => { b["pm[" + i + "]"] = m; });
   const laf = process.env.PAYREXX_LOOK_AND_FEEL && process.env.PAYREXX_LOOK_AND_FEEL.trim();
   if (laf) b.lookAndFeelProfile = laf;
   const sig = payrexxSig(phpHttpBuildQuery(b, true));
