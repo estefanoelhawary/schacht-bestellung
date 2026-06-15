@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Zielkunden-Cockpit · Bestellung — Estefano Elhawary AG</title>
+<meta name="description" content="3-Monats-Pilot: 150 verifizierte Kontakte pro Monat (inkl. GF-LinkedIn) + Lookalike-Engine für Schacht Consulting. Sichere Zahlung über Payrexx." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23C8102E'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/rotpunkt.css" />
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--rp-papier-2,#F4F4F2);color:var(--rp-tinte,#0A0A0A);font-family:var(--rp-sans,'Inter',system-ui,sans-serif);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  /* Topbar */
+  .ob-top{background:#fff;border-bottom:2px solid var(--rp-tinte);position:sticky;top:0;z-index:30}
+  .ob-top .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+  .ob-dot{width:14px;height:14px;border-radius:50%;background:var(--rp-rot);flex:0 0 auto}
+  .ob-brand{font-weight:900;letter-spacing:-.01em;font-size:15px}
+  .ob-brand small{display:block;font-family:var(--rp-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--rp-tinte-2);font-weight:400;margin-top:1px}
+  .ob-secure{margin-left:auto;font-family:var(--rp-mono);font-size:11px;letter-spacing:.04em;color:var(--rp-tinte-2);display:flex;align-items:center;gap:6px}
+  .ob-secure b{color:var(--rp-tinte)}
+  /* Hero */
+  .ob-hero{padding:48px 0 14px}
+  .ob-eyebrow{font-family:var(--rp-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rp-tinte-2);display:flex;align-items:center;gap:9px;margin-bottom:18px}
+  .ob-eyebrow .ob-dot{width:8px;height:8px}
+  h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:900;letter-spacing:-.025em;line-height:1.03;margin:0 0 14px}
+  .ob-sub{font-size:1.18rem;color:var(--rp-tinte-2);max-width:54ch;margin:0}
+  /* Grid */
+  .ob-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start;padding:30px 0 60px}
+  @media(max-width:860px){.ob-grid{grid-template-columns:1fr;gap:22px}}
+  .card{background:#fff;border:1px solid var(--rp-linie);border-radius:3px;padding:26px}
+  .card h2{font-size:1.05rem;font-weight:800;margin:0 0 4px;letter-spacing:-.01em}
+  .seclabel{font-family:var(--rp-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rp-tinte-3);display:flex;align-items:center;gap:8px;margin-bottom:16px}
+  .seclabel::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rp-rot)}
+  /* Leistungen */
+  .feat{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--rp-linie)}
+  .feat:first-of-type{border-top:0}
+  .feat .fi{flex:0 0 auto;width:22px;height:22px;border:2px solid var(--rp-rot);border-radius:50%;display:grid;place-items:center;color:var(--rp-rot);font-size:12px;font-weight:900;margin-top:1px}
+  .feat .ft{font-weight:700;font-size:14.5px}
+  .feat .fd{font-size:13px;color:var(--rp-tinte-2);margin-top:1px;line-height:1.45}
+  .proof{margin-top:18px;padding-top:16px;border-top:2px solid var(--rp-tinte)}
+  .proof-row{display:flex;gap:18px;flex-wrap:wrap}
+  .proof-row .p{flex:1 1 120px}
+  .proof-row .pv{font-size:1.5rem;font-weight:900;letter-spacing:-.02em}
+  .proof-row .pl{font-size:11px;color:var(--rp-tinte-3);font-family:var(--rp-mono);letter-spacing:.04em;text-transform:uppercase}
+  /* Order col */
+  .order{position:sticky;top:78px}
+  .plans{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+  .plan{text-align:left;width:100%;background:#fff;border:1px solid var(--rp-linie);border-radius:3px;padding:16px 16px 14px;cursor:pointer;position:relative;transition:border-color .14s,box-shadow .14s}
+  .plan:hover{border-color:var(--rp-tinte)}
+  .plan.sel{border-color:var(--rp-rot);border-width:2px;padding:15px 15px 13px}
+  .plan-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .plan-name{font-family:var(--rp-mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--rp-tinte-2)}
+  .plan-badge{font-family:var(--rp-mono);font-size:10px;font-weight:700;letter-spacing:.05em;color:#fff;background:var(--rp-rot);padding:3px 7px;border-radius:2px}
+  .plan-price{display:flex;align-items:baseline;gap:7px}
+  .plan-num{font-size:1.7rem;font-weight:900;letter-spacing:-.02em}
+  .plan-per{font-size:12px;color:var(--rp-tinte-3)}
+  .plan-note{font-size:12px;color:var(--rp-tinte-2);margin-top:5px;line-height:1.4}
+  .plan-radio{position:absolute;top:14px;right:14px;width:18px;height:18px;border:2px solid var(--rp-linie);border-radius:50%;background:#fff}
+  .plan.sel .plan-radio{border-color:var(--rp-rot)}
+  .plan.sel .plan-radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--rp-rot)}
+  /* summary */
+  .sum{border-top:2px solid var(--rp-tinte);margin-top:4px;padding-top:14px}
+  .sum-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:3px 0}
+  .sum-row.total{font-size:16px;font-weight:800;border-top:1px solid var(--rp-linie);margin-top:6px;padding-top:10px}
+  .sum-row .muted{color:var(--rp-tinte-3)}
+  .sum-tax{font-size:11.5px;color:var(--rp-tinte-3);margin-top:6px;line-height:1.45}
+  /* fields */
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .fields .full{grid-column:1/-1}
+  .field label{display:block;font-family:var(--rp-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--rp-tinte-3);margin-bottom:4px}
+  .field input{width:100%;font-family:var(--rp-sans);font-size:14px;padding:10px 11px;border:1px solid var(--rp-linie);border-radius:2px;background:#fff}
+  .field input:focus{outline:none;border-color:var(--rp-rot)}
+  .field input.err{border-color:var(--rp-rot);background:#fff5f5}
+  /* legal consent */
+  .consent{display:flex;gap:9px;align-items:flex-start;margin-top:16px;font-size:12.5px;color:var(--rp-tinte-2);line-height:1.5}
+  .consent input{margin-top:2px;width:16px;height:16px;flex:0 0 auto;accent-color:var(--rp-rot)}
+  .consent a{color:var(--rp-rot);text-decoration:underline;cursor:pointer}
+  /* CTA */
+  .cta{width:100%;margin-top:16px;background:var(--rp-rot);color:#fff;border:0;border-radius:3px;padding:16px;font-family:var(--rp-sans);font-size:16px;font-weight:800;letter-spacing:-.01em;cursor:pointer;transition:background .14s}
+  .cta:hover{background:var(--rp-rot-tief,#9E1B32)}
+  .cta:disabled{opacity:.55;cursor:not-allowed}
+  .cta-micro{font-size:11.5px;color:var(--rp-tinte-3);text-align:center;margin-top:9px;line-height:1.5}
+  .trust{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:11.5px;color:var(--rp-tinte-2)}
+  .trust span{display:flex;align-items:center;gap:5px}
+  .trust .ok{color:var(--rp-rot);font-weight:900}
+  /* footer / legal */
+  .ob-foot{background:#fff;border-top:2px solid var(--rp-tinte);padding:30px 0;font-size:12.5px;color:var(--rp-tinte-2)}
+  .ob-foot .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-start}
+  .ob-foot b{color:var(--rp-tinte);font-weight:800}
+  .ob-foot a{color:var(--rp-tinte-2);text-decoration:underline;cursor:pointer}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap}
+  .ph{background:#fff3cd;color:#7a5900;padding:0 3px;border-radius:2px;font-style:normal}
+  /* modal legal + payment */
+  .ov{position:fixed;inset:0;background:rgba(10,10,10,.55);display:none;z-index:60;align-items:center;justify-content:center;padding:20px}
+  .ov.on{display:flex}
+  .ov-box{background:#fff;border-radius:4px;max-width:680px;width:100%;max-height:88vh;overflow:auto;padding:28px;position:relative}
+  .ov-box h3{margin:0 0 4px;font-size:1.3rem;font-weight:900;letter-spacing:-.02em}
+  .ov-box h4{margin:18px 0 4px;font-size:14px;font-weight:800}
+  .ov-box p,.ov-box li{font-size:13px;color:var(--rp-tinte-2);line-height:1.55}
+  .ov-close{position:absolute;top:14px;right:16px;border:0;background:transparent;font-size:24px;line-height:1;cursor:pointer;color:var(--rp-tinte-3)}
+  /* payment overlay */
+  #payOv .ov-box{max-width:540px;padding:0;overflow:hidden}
+  #payOv .pay-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--rp-linie)}
+  #payOv .pay-head .t{font-family:var(--rp-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rp-tinte-2)}
+  #payOv iframe{width:100%;height:72vh;border:0;display:block}
+  #payOv .pay-fallback{padding:10px 16px;font-size:12px;color:var(--rp-tinte-3);border-top:1px solid var(--rp-linie)}
+  #payOv .pay-fallback a{color:var(--rp-rot)}
+</style>
+</head>
+<body>
+<header class="ob-top"><div class="wrap">
+  <span class="ob-dot"></span>
+  <span class="ob-brand">Estefano Elhawary AG<small>Zielkunden-Cockpit · Bestellung</small></span>
+  <span class="ob-secure">🔒 <b>Sichere Zahlung</b> · Payrexx · 256-Bit-SSL</span>
+</div></header>
+
+<section class="ob-hero"><div class="wrap">
+  <div class="ob-eyebrow"><span class="ob-dot"></span> Für Schacht Consulting · Start 1. Juli</div>
+  <h1>Jeden Monat 150 neue Zielkunden — mit Geschäftsführer&nbsp;&amp;&nbsp;LinkedIn.</h1>
+  <p class="ob-sub">Verifizierte Kontakte mit dem Profil Ihrer besten Mandate. Jeden Monat 150 frische — auf Basis Ihrer Rückmeldungen lernt der Algorithmus mit und trifft genauer. Über den 3-Monats-Pilot.</p>
+</div></section>
+
+<div class="wrap"><div class="ob-grid">
+
+  <!-- LINKS: Was Sie bekommen -->
+  <div class="card">
+    <div class="seclabel">Was Sie jeden Monat bekommen</div>
+    <div class="feat"><div class="fi">1</div><div><div class="ft">150 verifizierte Kontakte — jeden Monat</div><div class="fd">Pro Monat 150 frische, passende Zielkunden: Firma, Branche, Fit-Score, Geschäftsführer und dessen <b>LinkedIn-Profil</b>. Verifiziert, nicht geraten.</div></div></div>
+    <div class="feat"><div class="fi">2</div><div><div class="ft">Jeden Monat aktualisiert — auf Ihre Rückmeldung</div><div class="fd">Sie sagen uns, welche Kontakte gepasst haben. Der Algorithmus lernt daraus und liefert im Folgemonat noch genauere 150 — mit Ihren Daten als Treibstoff.</div></div></div>
+    <div class="feat"><div class="fi">3</div><div><div class="ft">Lookalike-Engine aus Ihren echten Mandaten</div><div class="fd">Der Algorithmus lernt aus Ihren 45 Kunden (Breuninger, Generali, Weleda, BASF, Toll Collect …) und findet deren Zwillinge im Markt.</div></div></div>
+    <div class="feat"><div class="fi">4</div><div><div class="ft">Wettbewerbs-Übersicht</div><div class="fd">Ihre direkten Marktbegleiter auf einen Blick — wer im gleichen Feld unterwegs ist.</div></div></div>
+    <div class="feat"><div class="fi">5</div><div><div class="ft">Aktivierung mit einem Klick</div><div class="fd">LinkedIn-Zielgruppe, Post-Mailing, Telefon-Liste, CRM-Export — aus den Kontakten wird Ihre Pipeline.</div></div></div>
+    <div class="proof"><div class="proof-row">
+      <div class="p"><div class="pv">150</div><div class="pl">Kontakte / Monat</div></div>
+      <div class="p"><div class="pv">3</div><div class="pl">Monate Pilot</div></div>
+      <div class="p"><div class="pv">45</div><div class="pl">Mandate als Lernbasis</div></div>
+    </div></div>
+  </div>
+
+  <!-- RECHTS: Bestellung -->
+  <div class="order">
+  <div class="card">
+    <div class="seclabel">Ihre Bestellung · 3-Monats-Pilot</div>
+
+    <div class="plans" id="plans">
+      <button type="button" class="plan sel" data-plan="pilot3">
+        <span class="plan-radio"></span>
+        <div class="plan-top"><span class="plan-name">3 Monate auf einmal</span><span class="plan-badge">10 % sparen</span></div>
+        <div class="plan-price"><span class="plan-num">2'421.90</span><span class="plan-per">CHF netto · einmalig</span></div>
+        <div class="plan-note">Die kompletten 3 Pilot-Monate im Voraus — 2'421.90 statt 2'691 CHF. Beste Wahl.</div>
+      </button>
+      <button type="button" class="plan" data-plan="monat">
+        <span class="plan-radio"></span>
+        <div class="plan-top"><span class="plan-name">Monatlich</span></div>
+        <div class="plan-price"><span class="plan-num">897</span><span class="plan-per">CHF netto / Monat</span></div>
+        <div class="plan-note">897 CHF pro Monat über den 3-Monats-Pilot (3× 897 = 2'691 CHF). Erste Rate sofort.</div>
+      </button>
+    </div>
+
+    <div class="sum">
+      <div class="sum-row"><span class="muted">Zielkunden-Cockpit · 150 Kontakte/Monat · 3-Monats-Pilot</span></div>
+      <div class="sum-row total"><span id="sumLabel">3 Monate auf einmal</span><span id="sumAmount">CHF 2'421.90</span></div>
+      <div class="sum-tax" id="sumTax">≈ 450 Kontakte über den Pilot (150 pro Monat). Netto. B2B-Leistung aus der Schweiz nach Deutschland → <b>Reverse Charge</b> (Steuerschuldnerschaft des Leistungsempfängers), keine Schweizer MwSt.</div>
+    </div>
+
+    <div class="fields">
+      <div class="field full"><label for="fFirma">Firma</label><input id="fFirma" value="Schacht Consulting" autocomplete="organization" /></div>
+      <div class="field"><label for="fName">Ansprechpartner</label><input id="fName" placeholder="Vor- und Nachname" autocomplete="name" /></div>
+      <div class="field"><label for="fMail">E-Mail *</label><input id="fMail" type="email" placeholder="name@firma.de" autocomplete="email" /></div>
+      <div class="field full"><label for="fVat">USt-IdNr (für Reverse Charge, optional)</label><input id="fVat" placeholder="z. B. DE123456789" autocomplete="off" /></div>
+    </div>
+
+    <label class="consent"><input type="checkbox" id="agb" />
+      <span>Ich habe die <a id="lnkAgb">AGB &amp; Leistungsbeschreibung</a> und die <a id="lnkDs">Datenschutzerklärung</a> gelesen und stimme zu. Bei diesem B2B-Vertrag besteht kein Verbraucher-Widerrufsrecht; der Pilot ist nach 3 Monaten monatlich kündbar.</span>
+    </label>
+
+    <button class="cta" id="payBtn">Zahlungspflichtig bestellen →</button>
+    <div class="cta-micro" id="payMsg">Weiter zur sicheren Zahlung über Payrexx. Bestätigung folgt per E-Mail.</div>
+
+    <div class="trust">
+      <span><span class="ok">✓</span> Schweizer AG</span>
+      <span><span class="ok">✓</span> Monatlich kündbar nach Pilot</span>
+      <span><span class="ok">✓</span> Karte · TWINT · Rechnung</span>
+      <span><span class="ok">✓</span> 256-Bit-SSL</span>
+    </div>
+  </div>
+  </div>
+
+</div></div>
+
+<footer class="ob-foot"><div class="wrap">
+  <div>
+    <b>Estefano Elhawary AG</b> · <span class="ph">[Strasse Nr.]</span>, <span class="ph">[PLZ Ort]</span>, Schweiz<br/>
+    Vertreten durch: Estefano Elhawary · E-Mail: <span class="ph">[kontakt@estefano-elhawary.ch]</span><br/>
+    Handelsregister: <span class="ph">[CHE-…]</span> · MWST-Nr.: <span class="ph">[CHE-… MWST]</span>
+  </div>
+  <div class="foot-links">
+    <a id="lnkImp2">Impressum</a>
+    <a id="lnkAgb2">AGB</a>
+    <a id="lnkDs2">Datenschutz</a>
+  </div>
+</div></footer>
+
+<!-- LEGAL MODALS -->
+<div class="ov" id="legalOv"><div class="ov-box">
+  <button class="ov-close" data-close>×</button>
+  <div id="legalContent"></div>
+</div></div>
+
+<!-- PAYMENT MODAL (Payrexx-Overlay) -->
+<div class="ov" id="payOv"><div class="ov-box">
+  <div class="pay-head"><span class="t">🔒 Sichere Zahlung · Payrexx</span><button class="ov-close" data-close style="position:static">×</button></div>
+  <iframe id="payFrame" title="Payrexx Zahlung" allow="payment"></iframe>
+  <div class="pay-fallback">Lädt nicht? <a id="payNewTab" target="_blank" rel="noopener">Zahlung in neuem Fenster öffnen ↗</a></div>
+</div></div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+const PRICES={pilot3:{label:"3 Monate auf einmal",amount:"CHF 2'421.90",tax:"einmalig"},monat:{label:"Monatlich · 897 CHF",amount:"CHF 897.00 / Monat",tax:"erste Rate sofort, dann monatlich"}};
+let plan="pilot3";
+function paint(){
+  document.querySelectorAll(".plan").forEach(b=>b.classList.toggle("sel",b.dataset.plan===plan));
+  $("#sumLabel").textContent=PRICES[plan].label;
+  $("#sumAmount").textContent=PRICES[plan].amount;
+}
+document.querySelectorAll(".plan").forEach(b=>b.addEventListener("click",()=>{plan=b.dataset.plan;paint();}));
+paint();
+
+// Legal modals
+const LEGAL={
+  imp:`<h3>Impressum / Anbieterkennzeichnung</h3>
+    <p><b>Anbieter:</b> Estefano Elhawary AG<br/>
+    Adresse: <span class="ph">[Strasse Nr.]</span>, <span class="ph">[PLZ Ort]</span>, Schweiz<br/>
+    Vertretungsberechtigt: Estefano Elhawary<br/>
+    E-Mail: <span class="ph">[kontakt@estefano-elhawary.ch]</span><br/>
+    Handelsregister-Nr. (UID): <span class="ph">[CHE-…]</span><br/>
+    MWST-Nr.: <span class="ph">[CHE-… MWST]</span></p>
+    <p style="margin-top:14px"><i>Hinweis: Die mit <span class="ph">[…]</span> markierten Angaben werden vor dem Versand an den Kunden durch die echten Firmendaten ersetzt.</i></p>`,
+  agb:`<h3>AGB &amp; Leistungsbeschreibung (Kurzfassung)</h3>
+    <h4>1. Vertragsgegenstand</h4><p>Estefano Elhawary AG (nachfolgend „Anbieter") stellt dem Kunden über die Pilotdauer <b>pro Monat 150 verifizierte Zielkontakte</b> bereit (je mit Firma, Branche, Fit-Score sowie Geschäftsführer inkl. LinkedIn-Profil), <b>jeden Monat aktualisiert</b> auf Basis der Rückmeldungen und Daten des Kunden. Enthalten ist der Online-Zugang zum „Zielkunden-Cockpit" mit Lookalike-Engine, Wettbewerbs-Übersicht sowie Aktivierungs- und Exportfunktionen. Der Kunde erhält ein nicht-ausschliessliches, nicht übertragbares Nutzungsrecht für die eigene Geschäftstätigkeit. Die Kontaktmenge (150/Monat) ist ein Richtwert nach bester Kuratierung; Qualität geht vor Menge.</p>
+    <h4>2. Laufzeit &amp; Kündigung</h4><p>3-Monats-Pilot. Danach läuft der Zugang monatlich weiter und ist jederzeit auf das Monatsende kündbar (formlos per E-Mail). Keine Mindestlaufzeit über den Pilot hinaus.</p>
+    <h4>3. Preise &amp; Zahlung</h4><p>Alle Preise in CHF, netto. Als B2B-Leistung eines Schweizer Anbieters an einen Unternehmer in Deutschland gilt das Reverse-Charge-Verfahren (Steuerschuldnerschaft des Leistungsempfängers); es wird keine Schweizer MwSt. ausgewiesen. Zahlung im Voraus über den Zahlungsdienstleister Payrexx (Schweiz). Freischaltung nach Zahlungseingang.</p>
+    <h4>4. Kein Verbraucher-Widerrufsrecht</h4><p>Der Vertrag wird mit einem Unternehmer (B2B) geschlossen; ein gesetzliches Verbraucher-Widerrufsrecht besteht nicht. Die Kündigungsregelung nach Ziffer 2 bleibt unberührt.</p>
+    <h4>5. Daten &amp; Datenschutz</h4><p>Es gilt die Datenschutzerklärung. Soweit der Anbieter personenbezogene Daten im Auftrag des Kunden verarbeitet, wird auf Wunsch ein Auftragsverarbeitungsvertrag (AVV nach Art. 28 DSGVO) geschlossen.</p>
+    <h4>6. Recht &amp; Gerichtsstand</h4><p>Es gilt Schweizer Recht. Gerichtsstand ist der Sitz des Anbieters, soweit gesetzlich zulässig.</p>
+    <p style="margin-top:14px"><i>Kurzfassung für die Bestellung. Vor dem Live-Gang wird die finale Fassung anwaltlich abgenommen.</i></p>`,
+  ds:`<h3>Datenschutzerklärung (Kurzfassung)</h3>
+    <p><b>Verantwortliche Stelle:</b> Estefano Elhawary AG, <span class="ph">[Adresse]</span>, Schweiz, <span class="ph">[kontakt@estefano-elhawary.ch]</span>.</p>
+    <h4>Zweck &amp; Rechtsgrundlage</h4><p>Wir verarbeiten die im Bestellformular angegebenen Daten (Firma, Ansprechpartner, E-Mail, ggf. USt-IdNr) ausschliesslich zur Vertragsanbahnung und -abwicklung (Art. 6 Abs. 1 lit. b DSGVO / revDSG). Zahlungsdaten werden direkt durch Payrexx (Schweiz) verarbeitet; wir erhalten keine vollständigen Kartendaten.</p>
+    <h4>Hosting &amp; Speicherort</h4><p>Die Anwendung und die Daten werden in der Schweiz gehostet. Eine Übermittlung in unsichere Drittstaaten findet nicht statt.</p>
+    <h4>Ihre Rechte</h4><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Datenübertragbarkeit sowie auf Beschwerde bei der zuständigen Aufsichtsbehörde (EDÖB / zuständige DE-Behörde). Kontakt: <span class="ph">[kontakt@estefano-elhawary.ch]</span>.</p>
+    <p style="margin-top:14px"><i>Kurzfassung; die vollständige Datenschutzerklärung wird vor dem Live-Gang ergänzt.</i></p>`
+};
+function openLegal(k){$("#legalContent").innerHTML=LEGAL[k];$("#legalOv").classList.add("on");}
+$("#lnkAgb").onclick=()=>openLegal("agb"); $("#lnkAgb2").onclick=()=>openLegal("agb");
+$("#lnkDs").onclick=()=>openLegal("ds");  $("#lnkDs2").onclick=()=>openLegal("ds");
+$("#lnkImp2").onclick=()=>openLegal("imp");
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>{$("#legalOv").classList.remove("on");$("#payOv").classList.remove("on");$("#payFrame").src="about:blank";});
+[ "#legalOv","#payOv" ].forEach(id=>$(id).addEventListener("click",e=>{if(e.target.id===id.slice(1)){$(id).classList.remove("on");if(id==="#payOv"){$("#payFrame").src="about:blank";}}}));
+
+// Checkout
+const mail=$("#fMail"), btn=$("#payBtn");
+btn.addEventListener("click",async()=>{
+  const email=mail.value.trim();
+  let ok=true;
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){mail.classList.add("err");ok=false;}else{mail.classList.remove("err");}
+  if(!$("#agb").checked){$("#payMsg").innerHTML="<b style='color:var(--rp-rot)'>Bitte AGB &amp; Datenschutz bestätigen.</b>";ok=false;}
+  if(!ok){if(mail.classList.contains("err"))mail.focus();return;}
+  btn.disabled=true;const old=btn.textContent;btn.textContent="Zahlung wird vorbereitet …";$("#payMsg").textContent="Einen Moment …";
+  try{
+    const r=await fetch("/api/checkout",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({plan,country:"DE",vatId:$("#fVat").value.trim(),firma:$("#fFirma").value.trim(),name:$("#fName").value.trim(),email})});
+    const j=await r.json();
+    if(j.ok&&j.link){
+      $("#payNewTab").href=j.link;
+      $("#payFrame").src=j.link;
+      $("#payOv").classList.add("on");
+      $("#payMsg").textContent="Zahlungsfenster geöffnet.";
+    }else{$("#payMsg").innerHTML="<b style='color:var(--rp-rot)'>Konnte die Zahlung nicht starten. Bitte erneut versuchen.</b>";}
+  }catch(e){$("#payMsg").innerHTML="<b style='color:var(--rp-rot)'>Netzwerkfehler — bitte erneut versuchen.</b>";}
+  btn.disabled=false;btn.textContent=old;
+});
+</script>
+</body>
+</html>
