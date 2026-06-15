@@ -1,0 +1,238 @@
+/* ============================================================================
+   ROTPUNKT — Schweizer Design-System (Swiss Style / International Typographic)
+   Codename "ROTPUNKT" = Red Dot · Schweizer Rot · der grosse rote Punkt.
+   Eine Datei. In jedes Projekt kopieren, <link> einbinden, fertig.
+   Stand: 2026-06-07 · Estefano Elhawary
+   ----------------------------------------------------------------------------
+   Prinzip: Schwarz + Weiss + GENAU EIN Rot. Strenges Raster. Viel Weissraum.
+   Eine Grotesk-Schrift. Scharfe Kanten. Keine Schatten, keine Verläufe.
+   Der ROTPUNKT (grosser roter Kreis) ist das eine Signature-Element pro Sektion.
+   ========================================================================== */
+
+/* Schriften: Inter (Helvetica-DNA, neutral) + Space Mono (Labels/Nummern).
+   Bezahlte Upgrades mit gleichem Charakter: Suisse Int'l, Neue Haas Grotesk,
+   Helvetica Now. Stack faellt sauber darauf zurueck. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* ---- Farbe: die ganze Palette. Mehr gibt es nicht. -------------------- */
+  --rp-rot:        #C8102E;   /* DER ROTPUNKT. Premium Swiss Red (PMS 485) – tief & edel, nicht grell. Kontrast auf Weiss 5.88:1 */
+  --rp-rot-tief:   #9E1B32;   /* gedunkeltes Crimson fuer Hover/Pressed auf Rot */
+  --rp-rot-edel:   #900027;   /* Victorinox-Bordeaux: optionaler edler Modus (statt --rp-rot setzen) */
+
+  --rp-tinte:      #0A0A0A;   /* Text/Schwarz (fast rein, augenfreundlich) */
+  --rp-tinte-2:    #5C5C5C;   /* Sekundaertext */
+  --rp-tinte-3:    #8A8A8A;   /* Tertiaer / Captions */
+
+  --rp-papier:     #FFFFFF;   /* Hintergrund rein weiss */
+  --rp-papier-2:   #F4F4F2;   /* Off-White fuer Sektionswechsel (Schweizer Papier) */
+  --rp-linie:      #E5E5E3;   /* Hairline / Raster-Linien */
+  --rp-linie-stark:#0A0A0A;   /* betonte Trennlinie = schwarz */
+
+  /* invertierte (dunkle) Sektion */
+  --rp-nacht:      #0A0A0A;
+  --rp-nacht-text: #FFFFFF;
+  --rp-nacht-linie:#2A2A2A;
+
+  /* ---- Schrift --------------------------------------------------------- */
+  --rp-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  --rp-mono: 'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Type-Scale: grosser Kontrast gross<->klein ist Swiss-Markenzeichen */
+  --rp-display: clamp(2.75rem, 7vw, 6rem);   /* 44 -> 96px Hero */
+  --rp-h1:      clamp(2.25rem, 4.5vw, 3.5rem);
+  --rp-h2:      clamp(1.6rem, 3vw, 2.5rem);
+  --rp-h3:      1.5rem;
+  --rp-body:    1.125rem;   /* 18px */
+  --rp-small:   0.9375rem;  /* 15px */
+  --rp-label:   0.75rem;    /* 12px, uppercase + tracking */
+
+  --rp-lh-tight: 1.02;      /* Headlines eng */
+  --rp-lh-snug:  1.2;
+  --rp-lh-body:  1.6;       /* Fliesstext luftig */
+
+  /* ---- Raster & Abstand: 8pt ------------------------------------------- */
+  --rp-s1: 8px;  --rp-s2: 16px; --rp-s3: 24px; --rp-s4: 32px;
+  --rp-s5: 40px; --rp-s6: 48px; --rp-s7: 64px; --rp-s8: 96px; --rp-s9: 128px;
+
+  --rp-max:    1280px;   /* Container-Obergrenze */
+  --rp-gutter: 24px;     /* Spaltenabstand */
+  --rp-rand:   clamp(20px, 5vw, 64px);  /* Aussenrand */
+
+  --rp-radius: 2px;      /* SCHARF. Max 4px. Swiss = eckig. */
+
+  /* ---- Bewegung -------------------------------------------------------- */
+  --rp-fast: 120ms cubic-bezier(.2,0,0,1);
+  --rp-mid:  220ms cubic-bezier(.2,0,0,1);
+}
+
+/* ============================ Basis ====================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--rp-sans);
+  font-size: var(--rp-body);
+  line-height: var(--rp-lh-body);
+  color: var(--rp-tinte);
+  background: var(--rp-papier);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--rp-rot); color: #fff; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ============================ Typografie ================================= */
+.rp-display, .rp-h1, .rp-h2, .rp-h3 {
+  font-family: var(--rp-sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: var(--rp-lh-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+.rp-display { font-size: var(--rp-display); font-weight: 900; letter-spacing: -0.035em; }
+.rp-h1 { font-size: var(--rp-h1); }
+.rp-h2 { font-size: var(--rp-h2); letter-spacing: -0.025em; line-height: 1.1; }
+.rp-h3 { font-size: var(--rp-h3); font-weight: 700; line-height: var(--rp-lh-snug); letter-spacing: -0.01em; }
+
+.rp-lead { font-size: clamp(1.125rem, 1.6vw, 1.375rem); line-height: 1.5; color: var(--rp-tinte); max-width: 60ch; }
+.rp-body { font-size: var(--rp-body); line-height: var(--rp-lh-body); color: var(--rp-tinte-2); max-width: 68ch; }
+.rp-small { font-size: var(--rp-small); color: var(--rp-tinte-2); }
+
+/* Eyebrow / Label / Nummern-Index — der Swiss-Editorial-Touch */
+.rp-label, .rp-eyebrow {
+  font-family: var(--rp-mono);
+  font-size: var(--rp-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rp-tinte);
+}
+.rp-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--rp-tinte-2); }
+.rp-index { font-family: var(--rp-mono); font-weight: 700; color: var(--rp-rot); font-size: var(--rp-label); letter-spacing: .1em; }
+
+.rp-accent { color: var(--rp-rot); }
+
+/* ============================ DER ROTPUNKT =============================== */
+/* Das Signature-Element. Genau EINER pro Sektion als Eyecatcher. */
+.rp-dot {
+  display: inline-block;
+  width: 0.62em; height: 0.62em;
+  border-radius: 50%;
+  background: var(--rp-rot);
+  vertical-align: baseline;
+}
+/* Grosser Hero-Punkt (Hintergrund/Deko) */
+.rp-dot-xl {
+  position: relative;
+  width: clamp(180px, 30vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--rp-rot);
+}
+/* Punkt als runde Bildmaske: <div class="rp-dot-img"><img></div> */
+.rp-dot-img { width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--rp-papier-2); }
+.rp-dot-img img { width: 100%; height: 100%; object-fit: cover; }
+/* Live-Punkt (pulsierend) */
+.rp-dot-live { position: relative; }
+.rp-dot-live::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--rp-rot); animation: rp-pulse 1.8s ease-out infinite;
+}
+@keyframes rp-pulse { 0%{transform:scale(1);opacity:.6} 100%{transform:scale(2.6);opacity:0} }
+/* Punkt-Bullet-Liste */
+.rp-bullets { list-style: none; padding: 0; margin: 0; }
+.rp-bullets li { position: relative; padding-left: 26px; margin-bottom: 14px; }
+.rp-bullets li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--rp-rot);
+}
+
+/* ============================ Layout / Raster =========================== */
+.rp-container { max-width: var(--rp-max); margin-inline: auto; padding-inline: var(--rp-rand); }
+.rp-section { padding-block: clamp(56px, 9vw, 128px); scroll-margin-top: 84px; }
+.rp-section--paper2 { background: var(--rp-papier-2); }
+.rp-section--night { background: var(--rp-nacht); color: var(--rp-nacht-text); }
+.rp-section--night .rp-body, .rp-section--night .rp-lead { color: #C9C9C9; }
+.rp-section--night .rp-label { color: #fff; }
+.rp-section--night .rp-rule, .rp-section--night .rp-grid--lines > * { border-color: var(--rp-nacht-linie); }
+
+.rp-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--rp-gutter); }
+.rp-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--rp-gutter); }
+.rp-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--rp-gutter); }
+.rp-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--rp-gutter); }
+@media (max-width: 860px){ .rp-grid-3, .rp-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px){ .rp-grid { grid-template-columns: 1fr; } .rp-grid > * { grid-column: 1 / -1 !important; } }
+@media (max-width: 560px){ .rp-grid-2, .rp-grid-3, .rp-grid-4 { grid-template-columns: 1fr; } }
+
+/* Sichtbare Hairline-Struktur — typisch Swiss */
+.rp-rule { border: 0; border-top: 1px solid var(--rp-linie); margin: 0; }
+.rp-rule--strong { border-top: 2px solid var(--rp-tinte); }
+/* Raster mit sichtbaren Trennlinien zwischen den Zellen */
+.rp-grid--lines > * { border-top: 1px solid var(--rp-linie); padding-top: var(--rp-s3); }
+
+/* ============================ Komponenten =============================== */
+/* Button — scharf, flaechig, klarer Kontrast. Keine Pillen, keine Schatten. */
+.rp-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--rp-sans); font-size: var(--rp-small); font-weight: 700;
+  letter-spacing: .01em; line-height: 1;
+  padding: 15px 24px; border-radius: var(--rp-radius);
+  border: 2px solid var(--rp-tinte); background: transparent; color: var(--rp-tinte); cursor: pointer;
+  transition: background var(--rp-fast), color var(--rp-fast), transform var(--rp-fast), border-color var(--rp-fast);
+}
+.rp-btn:active { transform: translateY(1px); }
+.rp-btn--primary { background: var(--rp-rot); border-color: var(--rp-rot); color: #fff; }
+.rp-btn--primary:hover { background: var(--rp-rot-tief); border-color: var(--rp-rot-tief); }
+.rp-btn--dark { background: var(--rp-tinte); color: #fff; }
+.rp-btn--dark:hover { background: var(--rp-rot); border-color: var(--rp-rot); }
+.rp-btn--ghost { background: transparent; color: var(--rp-tinte); }
+.rp-btn--ghost:hover { background: var(--rp-tinte); color: #fff; }
+.rp-btn--on-night { border-color:#fff; color:#fff; }
+.rp-btn--on-night:hover { background:#fff; color:var(--rp-tinte); }
+
+/* Karte — weiss, Hairline, KEIN Schatten, scharfe Ecke */
+.rp-card {
+  background: var(--rp-papier); border: 1px solid var(--rp-linie);
+  border-radius: var(--rp-radius); padding: var(--rp-s4);
+  transition: border-color var(--rp-mid), transform var(--rp-mid);
+}
+.rp-card:hover { border-color: var(--rp-tinte); transform: translateY(-2px); }
+.rp-card--accent { border-top: 3px solid var(--rp-rot); }
+
+/* Badge / Tag — rechteckig, mono, uppercase */
+.rp-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--rp-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 6px 10px; border: 1px solid var(--rp-linie); border-radius: var(--rp-radius);
+  color: var(--rp-tinte);
+}
+.rp-badge--rot { background: var(--rp-rot); border-color: var(--rp-rot); color: #fff; }
+
+/* Statistik-Block — grosse Zahl, kleines Label (Kontrast) */
+.rp-stat__num { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.rp-stat__label { font-family: var(--rp-mono); font-size: var(--rp-label); letter-spacing: .12em; text-transform: uppercase; color: var(--rp-tinte-2); margin-top: 10px; }
+
+/* Link mit Pfeil + Hover-Unterstreichung */
+.rp-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; border-bottom: 2px solid transparent; transition: border-color var(--rp-fast); }
+.rp-link:hover { border-color: var(--rp-rot); }
+.rp-link .rp-arrow { transition: transform var(--rp-fast); }
+.rp-link:hover .rp-arrow { transform: translateX(4px); }
+
+/* Input — scharf, klare Linien */
+.rp-input { width: 100%; font-family: var(--rp-sans); font-size: var(--rp-body); padding: 14px 16px; border: 1px solid var(--rp-tinte); border-radius: var(--rp-radius); background: #fff; }
+.rp-input:focus { outline: 2px solid var(--rp-rot); outline-offset: 1px; }
+
+/* ============================ Helfer ==================================== */
+.rp-stack > * + * { margin-top: var(--rp-s2); }
+.rp-stack-lg > * + * { margin-top: var(--rp-s4); }
+.rp-mono { font-family: var(--rp-mono); }
+.rp-uppercase { text-transform: uppercase; letter-spacing: .12em; }
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
